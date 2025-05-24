@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import * as cdk from 'aws-cdk-lib';
-import { AtomatedRagPipelineStack } from '../lib/atomated-rag-pipeline-stack';
+import * as cdk from "aws-cdk-lib";
+import { AtomatedRagPipelineStack } from "../lib/atomated-rag-pipeline-stack";
 
 const app = new cdk.App();
-new AtomatedRagPipelineStack(app, 'AtomatedRagPipelineStack', {
+new AtomatedRagPipelineStack(app, "AtomatedRagPipelineStack", {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -17,4 +17,8 @@ new AtomatedRagPipelineStack(app, 'AtomatedRagPipelineStack', {
   // env: { account: '123456789012', region: 'us-east-1' },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION,
+  },
 });
