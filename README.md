@@ -16,3 +16,9 @@ cdk init app --language typescript
 - `npx cdk deploy` deploy this stack to your default AWS account/region
 - `npx cdk diff` compare deployed stack with current state
 - `npx cdk synth` emits the synthesized CloudFormation template
+
+## Core concepts
+
+A _stack_ in AWS CDK is a blueprint or a container that group all related AWS resources together. It contains all the infrastructure components needed for a specific part of the application.
+
+- `lib/atomated-rag-pipeline-stack.ts` contains S3 bucket and DynamoBD table for storing processed data.
